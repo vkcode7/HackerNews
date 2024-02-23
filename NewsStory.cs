@@ -18,15 +18,15 @@ namespace HackerNews
      * This is what we return to clients
      */
     public class NewsStory
-	{
-		public NewsStory(
+    {
+        public NewsStory(
             string title,
             string uri,
             string postedBy,
             DateTime time,
             int score,
             int commentCount)
-		{
+        {
             Title = title;
             Uri = uri;
             PostedBy = postedBy;

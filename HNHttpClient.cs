@@ -7,8 +7,8 @@ namespace HackerNews
      * Gets the best stories and also the individual story based on the Id
      */
 
-	public class HNHttpClient
-	{
+    public class HNHttpClient
+    {
         private readonly HttpClient _httpClient;
         private const string BEST_STORIES_URL = @"https://hacker-news.firebaseio.com/v0/beststories.json";
 
