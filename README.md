@@ -37,6 +37,7 @@ You should share a public repository with us, that should include a README.md fi
 - The code uses in memory caching where in the best stories data is cached for 2 minutes and individual stories are cached for 60 minutes
 - The URL path is http://localhost:port/api/v1/news/get-best-stories/10
 - If the story count (n) is omitted, the API defaults to n=10
+- The HackerNews API for best stories only returns 200 story ids, so API is limited to only 200 results. If n > 200, than 200 news stories will be returned back by the API instead of an error message indicating that n is over 200.
 
 ## How to Run the Application (bash shell)
 
@@ -71,17 +72,17 @@ Add latest version of following NuGet packages if needed:
 
 ## API Overview
 
-Title: API to get best stories from the Hacker News API
-Version: 1.0
-Server base URL: http://localhost:5131/api
+Title: API to get best stories from the Hacker News API<br>
+Version: 1.0<br>
+Server base URL: http://localhost:5131/api<br>
 
-GET /api/v1/news/get-best-stories
+GET /api/v1/news/get-best-stories<br>
 GET /api/v1/news/get-best-stories/n
 
-Content-Type: application/json
-Responses:
-   HTTP 200 OK
-   Response Body Format
+Content-Type: application/json <br>
+Responses:<br>
+   HTTP 200 OK<br>
+   Response Body Format<br>
 ```json
 [
     {
@@ -97,7 +98,7 @@ Responses:
 ]
 ```
 ### Example Request/Response
-To get 4 best stories:
+To get 4 best stories:<br>
 http://localhost:5131/api/v1/news/get-best-stories/4
 
 ```json
