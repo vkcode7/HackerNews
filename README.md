@@ -39,6 +39,12 @@ You should share a public repository with us, that should include a README.md fi
 - If the story count (n) is omitted, the API defaults to n=10
 - The HackerNews API for best stories only returns 200 story ids, so API is limited to only 200 results. If n > 200, than 200 news stories will be returned back by the API instead of an error message indicating that n is over 200.
 
+## Environment
+.NET 7.0<br>
+Microsoft Visual Studio 2022<br>
+
+Though the .csproj file uses .NET 7.0 framework but it has been compiled and tested with .NET 6.0 and works with both without any issues.
+
 ## How to Run the Application (bash shell)
 
 1. Clone the repository:
