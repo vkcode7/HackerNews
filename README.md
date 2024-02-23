@@ -69,7 +69,34 @@ Add latest version of following NuGet packages if needed:
 - Microsoft.AspNetCore.Mvc.Versioning
 - Newtonsoft.Json
 
-## Sample Request/Response
+## API Overview
+
+Title: API to get best stories from the Hacker News API
+Version: 1.0
+Server base URL: http://localhost:5131/api
+
+GET /api/v1/news/get-best-stories
+GET /api/v1/news/get-best-stories/n
+
+Content-Type: application/json
+Responses:
+   HTTP 200 OK
+   Response Body Format
+```json
+[
+    {
+        "title": The title of the story, poll or job,
+        "uri": The URL of the story,
+        "postedBy": The username of the item's author,
+        "time": Creation date of the item,
+        "score": The story's score, or the votes for a pollopt,
+        "commentCount": this data is no longer available, so defdaulted to 0
+    },
+    {...},
+    {...}
+]
+```
+### Example Request/Response
 To get 4 best stories:
 http://localhost:5131/api/v1/news/get-best-stories/4
 
