@@ -68,3 +68,44 @@ http://localhost:5131/api/v1/news/get-best-stories/25
 Add latest version of following NuGet packages if needed:
 - Microsoft.AspNetCore.Mvc.Versioning
 - Newtonsoft.Json
+
+## Sample Request/Response
+To get 4 best stories:
+http://localhost:5131/api/v1/news/get-best-stories/4
+
+```json
+[
+    {
+        "title": "Insecure vehicles should be banned, not security tools like the Flipper Zero",
+        "uri": "https://saveflipper.ca/",
+        "postedBy": "pabs3",
+        "time": "2024-02-21T11:20:49Z",
+        "score": 1456,
+        "commentCount": 0
+    },
+    {
+        "title": "Keep your phone number private with Signal usernames",
+        "uri": "https://signal.org/blog/phone-number-privacy-usernames/",
+        "postedBy": "Josely",
+        "time": "2024-02-20T18:01:05Z",
+        "score": 1405,
+        "commentCount": 0
+    },
+    {
+        "title": "The killer app of Gemini Pro 1.5 is using video as an input",
+        "uri": "https://simonwillison.net/2024/Feb/21/gemini-pro-video/",
+        "postedBy": "simonw",
+        "time": "2024-02-21T19:23:06Z",
+        "score": 1103,
+        "commentCount": 0
+    },
+    {
+        "title": "Gemma: New Open Models",
+        "uri": "https://blog.google/technology/developers/gemma-open-models/",
+        "postedBy": "meetpateltech",
+        "time": "2024-02-21T13:03:53Z",
+        "score": 1101,
+        "commentCount": 0
+    }
+]
+```
