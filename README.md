@@ -31,3 +31,34 @@ The API should return an array of the best n stories as returned by the Hacker N
 In addition to the above, your API should be able to efficiently service large numbers of requests without risking overloading of the Hacker News API.
 
 You should share a public repository with us, that should include a README.md file which describes how to run the application, any assumptions you have made, and any enhancements or changes you would make, given the time.
+
+## How to Run the Application (bash shell)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vkcode7/HackerNews.git
+   cd HackerNews
+
+2. Restore dependencies and build the project:
+   ```bash
+   dotnet restore
+   dotnet build
+
+2. Run the application:
+   ```bash
+   dotnet run
+
+This will spawn the web server and API can be accessed using URL (fetch 25 best stories) in browser or Postman:
+
+http://localhost:5131/api/v1/news/get-best-stories/25
+
+## Running in Visual Studio
+
+1. Open the HackerNews.csproj file in VS 2022 and build the project
+2. Build the project and launch it
+3. Access the API using URL provided in previous section
+
+## Dependencies
+Add latest version of following NuGet packages if needed:
+- Microsoft.AspNetCore.Mvc.Versioning
+- Newtonsoft.Json
