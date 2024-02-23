@@ -50,11 +50,8 @@ namespace HackerNews.Controllers
                 _cache.Set("BestHNStoryIds", Ids, TimeSpan.FromMinutes(BEST_STORIES_CACHE_TIMEOUT_MINUTES));
             }
 
-            if (Ids.Length > n) //we have more stories in cache
-                Ids = Ids[..n];
-
             var news_stories = new List<NewsStory>();
-            if (Ids.Length > n) //we have more stories
+            if (Ids.Length > n) //we fetched more stories than requested
                 Ids = Ids[..n];
 
             foreach (var id in Ids)
