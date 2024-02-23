@@ -32,6 +32,12 @@ In addition to the above, your API should be able to efficiently service large n
 
 You should share a public repository with us, that should include a README.md file which describes how to run the application, any assumptions you have made, and any enhancements or changes you would make, given the time.
 
+## Notes and Assumptions
+- The commentCount attribute is no longer available in the response from hacker-news site, so it is set to a default value of 0 in that case
+- The code uses in memory caching where in the best stories data is cached for 2 minutes and individual stories are cached for 60 minutes
+- The URL path is http://localhost:port/api/v1/news/get-best-stories/10
+- If the story count (n) is omitted, the API defaults to n=10
+
 ## How to Run the Application (bash shell)
 
 1. Clone the repository:
