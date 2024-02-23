@@ -26,7 +26,7 @@ namespace HackerNews
         public async Task<int[]> GetBestStoriesIdsAsync(int n)
         {
             //the response is an array of story ids (all numeric), there are 200 of them per response
-            int[]? response = await _httpClient.GetFromJsonAsync<int[]>(BEST_STORIES_URL);
+            int[] response = await _httpClient.GetFromJsonAsync<int[]>(BEST_STORIES_URL);
             return response;
         }
 
