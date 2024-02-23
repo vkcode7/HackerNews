@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace HackerNews.Controllers
@@ -22,6 +17,8 @@ namespace HackerNews.Controllers
         // we are using 2 minutes time out cache for best stories
         // 1 hour for caching individual story
         private const int DEFAULT_STORIES_COUNT = 10;
+        private const int BEST_STORIES_CACHE_TIMEOUT_MINUTES = 2;
+        private const int NEWS_STORY_CACHE_TIMEOUT_MINUTES = 60;
 
         public NewsController(HNHttpClient client, IMemoryCache cache)
         {
@@ -50,7 +47,7 @@ namespace HackerNews.Controllers
             {
                 // If Ids are not cached fetch and cache them for a time span of 2 minutes
                 Ids = await _HNHttpClient.GetBestStoriesIdsAsync(n);
-                _cache.Set("BestHNStoryIds", Ids, TimeSpan.FromMinutes(2));
+                _cache.Set("BestHNStoryIds", Ids, TimeSpan.FromMinutes(BEST_STORIES_CACHE_TIMEOUT_MINUTES));
             }
 
             if (Ids.Length > n) //we have more stories in cache
@@ -70,7 +67,7 @@ namespace HackerNews.Controllers
                     news_story = await _HNHttpClient.GetStoryAsync(id);
 
                     // add it to cache with a time out of 1 hour
-                    _cache.Set($"NewsStory_{id}", news_story, TimeSpan.FromHours(1));
+                    _cache.Set($"NewsStory_{id}", news_story, TimeSpan.FromMinutes(NEWS_STORY_CACHE_TIMEOUT_MINUTES));
                 }
 
                 news_stories.Add(news_story);

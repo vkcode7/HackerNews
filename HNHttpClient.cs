@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using Microsoft.Net.Http.Headers;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace HackerNews
 {
