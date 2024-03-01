@@ -46,7 +46,7 @@ namespace HackerNews.Controllers
             if (!_cache.TryGetValue("BestHNStoryIds", out int[] Ids))
             {
                 // If Ids are not cached fetch and cache them for a time span of 2 minutes
-                Ids = await _HNHttpClient.GetBestStoriesIdsAsync(n);
+                Ids = await _HNHttpClient.GetBestStoriesIdsAsync();
                 _cache.Set("BestHNStoryIds", Ids, TimeSpan.FromMinutes(BEST_STORIES_CACHE_TIMEOUT_MINUTES));
             }
 
